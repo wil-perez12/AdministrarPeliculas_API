@@ -7,5 +7,9 @@ namespace AdministrarPeliculas_API.Intefaces
 
         List<pelicula> GetPeliculas();
         List<pelicula> GetPeliculasByGenero(string genero);
+
+        string postPelicula(pelicula pelicula);
+        string putPelicula(pelicula pelicula);
+        string deletePelicula(int id);
     }
 }

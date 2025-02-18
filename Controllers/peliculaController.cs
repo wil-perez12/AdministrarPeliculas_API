@@ -13,7 +13,7 @@ namespace AdministrarPeliculas_API.Controllers
         private readonly IAdministrable _administrable;
 
         public peliculaController(IAdministrable _administrable)
-        { 
+        {
             this._administrable = _administrable;
         }
 
@@ -29,5 +29,22 @@ namespace AdministrarPeliculas_API.Controllers
             return _administrable.GetPeliculasByGenero(genero);
         }
 
+        [HttpPost("post-Peli")]
+        public string postPelicula([FromBody] pelicula pelicula)
+        {
+            return _administrable.postPelicula(pelicula);
+        }
+
+        [HttpDelete("Delete-Peli/{id}")]
+        public string deletePelicula([FromRoute] int id)
+        {
+            return _administrable.deletePelicula(id);
+        }
+
+        [HttpPut("put/pelicula")]
+        public string putPelicula(pelicula pelicula)
+        {
+            return _administrable.putPelicula(pelicula);
+        }
     }
 }
