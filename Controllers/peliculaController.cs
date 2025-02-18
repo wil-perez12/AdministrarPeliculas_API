@@ -23,7 +23,7 @@ namespace AdministrarPeliculas_API.Controllers
             return _administrable.GetPeliculas();
         }
 
-        [HttpGet("PeliculasByGenero")]
+        [HttpGet("PeliculasByGenero{genero}")]
         public List<pelicula> GetPeliculasByGenero(string genero)
         {
             return _administrable.GetPeliculasByGenero(genero);
